@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
   kotlin("jvm") version "1.4.30"
   id("com.github.johnrengelman.shadow") version "6.1.0"
@@ -21,15 +19,6 @@ dependencies {
 
   // flit runtime
   implementation(fileTree(mapOf("dir" to "libs", "include" to "*.jar")))
-}
-
-val compileKotlin: KotlinCompile by tasks
-compileKotlin.kotlinOptions {
-    jvmTarget = "1.8"
-}
-val compileTestKotlin: KotlinCompile by tasks
-compileTestKotlin.kotlinOptions {
-    jvmTarget = "1.8"
 }
 
 task<Exec>("flit") {
